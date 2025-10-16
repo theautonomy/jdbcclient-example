@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS order_items;
 DROP TABLE IF EXISTS orders;
 DROP TABLE IF EXISTS products;
 DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS users;
 
 -- Create customers table
 CREATE TABLE customers (
@@ -40,4 +41,17 @@ CREATE TABLE order_items (
     unit_price DECIMAL(10, 2) NOT NULL,
     FOREIGN KEY (order_id) REFERENCES orders(id),
     FOREIGN KEY (product_id) REFERENCES products(id)
+);
+
+-- Create users table for slide examples
+CREATE TABLE users (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    active BOOLEAN DEFAULT TRUE,
+    age INTEGER,
+    department VARCHAR(50),
+    created_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_modified TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );

@@ -39,3 +39,11 @@ INSERT INTO order_items (order_id, product_id, quantity, unit_price) VALUES
 -- Order 5
 (5, 2, 1, 29.99),
 (5, 5, 1, 9.99);
+
+-- Insert sample users for slide examples
+INSERT INTO users (email, first_name, last_name, active, age, department) VALUES
+('john@example.com', 'John', 'Doe', TRUE, 30, 'Engineering'),
+('jane@example.com', 'Jane', 'Smith', TRUE, 28, 'Marketing'),
+('bob@example.com', 'Bob', 'Johnson', FALSE, 35, 'Engineering'),
+('alice@example.com', 'Alice', 'Williams', TRUE, 25, 'Sales'),
+('charlie@example.com', 'Charlie', 'Brown', TRUE, 40, 'Engineering');
